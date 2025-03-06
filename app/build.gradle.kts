@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.dagger.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -56,4 +59,29 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+
+    // Material
+    implementation(libs.androidx.material)
+
+
+    // Lifecycle
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+
+    // Hilt
+    implementation(libs.hilt)
+    implementation(libs.androidx.hilt)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.androidx.hilt)
+//    kapt("androidx.hilt:hilt-compiler:1.0.0")
+//    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+
 }
