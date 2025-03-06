@@ -7,6 +7,11 @@ plugins {
     id("kotlin-kapt")
 }
 
+
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     namespace = "ir.ubaar.appinterview"
     compileSdk = 35
@@ -68,8 +73,6 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
 
-
-
     // Material
     implementation(libs.androidx.material)
 
@@ -79,15 +82,24 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
 
+    //Hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    kapt("com.google.dagger:hilt-compiler:2.51")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+
+
+
+
     // Hilt
-    implementation(libs.hilt)
-    implementation(libs.androidx.hilt)
-    ksp(libs.hilt.android.compiler)
-    ksp(libs.androidx.hilt)
-//    kapt("androidx.hilt:hilt-compiler:1.0.0")
+//    implementation(libs.hilt)
+//    implementation(libs.androidx.hilt)
+//    ksp(libs.hilt.android.compiler)
+//    ksp(libs.androidx.hilt)
 //    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
-
-
+//    ksp(libs.dagger.hilt.android.compiler)
+//    implementation(libs.androidx.hilt.work)
+//    ksp(libs.androidx.hilt.compiler)
+//    implementation(libs.androidx.work.runtime.ktx)
 
     //Navigation
     implementation("androidx.navigation:navigation-compose:2.7.0-beta02")
