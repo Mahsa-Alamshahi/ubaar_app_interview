@@ -36,6 +36,7 @@ object NetworkModule {
             .addInterceptor { chain ->
                 val newRequest = chain.request().newBuilder()
                     .addHeader("Content-Type", "application/json")
+
                     .build()
                 chain.proceed(newRequest)
             }
