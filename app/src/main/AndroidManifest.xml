@@ -18,7 +18,7 @@
         tools:targetApi="31">
         <activity
             android:name=".ui.MainActivity"
-            android:windowSoftInputMode="adjustResize"
+            android:windowSoftInputMode="adjustNothing"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.UbaarAppInterview">
@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAFlVetsjNzvB3hBr15ezLWs2jGhAB5MRk"/>
+
     </application>
 
 </manifest>

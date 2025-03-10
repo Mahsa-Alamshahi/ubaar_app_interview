@@ -6,6 +6,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.ubaar.appinterview.data.data_source.remote.ApiService
 import ir.ubaar.appinterview.utils.AppConstants.BASE_URL
+import ir.ubaar.appinterview.utils.AppConstants.PASSWORD
+import ir.ubaar.appinterview.utils.AppConstants.USER_NAME
+import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,6 +23,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
+
     @Singleton
     @Provides
     fun provideHttpClient(): OkHttpClient {
@@ -29,14 +33,14 @@ object NetworkModule {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val builder = OkHttpClient.Builder()
         builder.addInterceptor(interceptor)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(1, TimeUnit.MINUTES)
+            .readTimeout(1, TimeUnit.MINUTES)
             .followRedirects(true)
             .followSslRedirects(true)
             .addInterceptor { chain ->
                 val newRequest = chain.request().newBuilder()
                     .addHeader("Content-Type", "application/json")
-
+                    .header("Authorization", Credentials.basic(USER_NAME, PASSWORD))
                     .build()
                 chain.proceed(newRequest)
             }

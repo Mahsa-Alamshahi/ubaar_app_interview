@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Ubaar App Interview</string>
+    <string name="register">ثبت نام</string>
+    <string name="enter_your_data">لطفا اطلاعات ورود خود را وارد نمایید.</string>
+    <string name="last_name">نام خانوادگی</string>
+    <string name="phone_number">تلفن همراه</string>
+    <string name="mobile_phone">تلفن ثابت</string>
+    <string name="address">آدرس دقیق</string>
+    <string name="gender">جنسیت</string>
+    <string name="next">مرحله بعد</string>
+    <string name="name">نام</string>
+    <string name="retry">Retry</string>
+    <string name="address_list">لیست آدرس ها</string>
+    <string name="address_added_successfully">Address added successfully</string>
 </resources>

@@ -15,7 +15,7 @@ data class AddressListDtoItem(
     @SerializedName("gender") val gender: String?,
     @SerializedName("id") val id: String?,
     @SerializedName("last_name") val lastName: String?,
-    @SerializedName("lat") val latitude: Int?,
-    @SerializedName("lng") val longitude: Int?,
+    @SerializedName("lat") val latitude: Double?,
+    @SerializedName("lng") val longitude: Double?,
     @SerializedName("region") val region: Region?
 )

@@ -21,6 +21,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import ir.ubaar.appinterview.ui.theme.FormTitleTextColor
 
 
 @Composable
@@ -28,6 +30,7 @@ fun GenderSwitch(
     items: List<String>,
     onGenderSelected: (String) -> Unit
 ) {
+
     var selectedGender by remember { mutableStateOf(items[0]) }
 
     Row(
@@ -36,7 +39,7 @@ fun GenderSwitch(
             .background(Color.White)
             .border(
                 width = .4.dp,
-                color = Color(0xFF2684B4),
+                color = FormTitleTextColor,
                 shape = RectangleShape
             )
     ) {
@@ -45,7 +48,7 @@ fun GenderSwitch(
                 modifier = Modifier
                     .weight(1f)
                     .clip(RoundedCornerShape(0.dp))
-                    .background(if (selectedGender == gender) Color(0xFF2684B4) else Color.White)
+                    .background(if (selectedGender == gender) FormTitleTextColor else Color.White)
                     .clickable {
                         selectedGender = gender
                         onGenderSelected(gender)
@@ -55,13 +58,15 @@ fun GenderSwitch(
             ) {
                 Text(
                     text = gender,
-                    color = if (selectedGender == gender) Color.White else Color(0xFF2684B4),
-                    fontWeight = FontWeight.Bold
+                    color = if (selectedGender == gender) Color.White else FormTitleTextColor,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp
                 )
             }
         }
     }
 }
+
 
 @Preview
 @Composable

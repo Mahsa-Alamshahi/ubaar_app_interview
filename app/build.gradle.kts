@@ -66,12 +66,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
+
 
     // Material
     implementation(libs.androidx.material)
@@ -83,30 +83,24 @@ dependencies {
 
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.51")
-    kapt("com.google.dagger:hilt-compiler:2.51")
-    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    kapt(libs.androidx.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
-
-
-
-    // Hilt
-//    implementation(libs.hilt)
-//    implementation(libs.androidx.hilt)
-//    ksp(libs.hilt.android.compiler)
-//    ksp(libs.androidx.hilt)
-//    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
-//    ksp(libs.dagger.hilt.android.compiler)
-//    implementation(libs.androidx.hilt.work)
-//    ksp(libs.androidx.hilt.compiler)
-//    implementation(libs.androidx.work.runtime.ktx)
 
     //Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.0-beta02")
-
+    implementation(libs.androidx.navigation.compose)
 
 
     // Multidex
-    implementation("androidx.multidex:multidex:2.0.1")
+    implementation(libs.androidx.multidex)
 
+
+    // Logger
+    implementation(libs.logger)
+
+
+    // Accompanist
+    implementation(libs.accompanist.systemuicontroller)
 }
